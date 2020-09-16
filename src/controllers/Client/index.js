@@ -4,8 +4,9 @@ const update = require("./update");
 const destroy = require("./delete");
 
 module.exports = {
-  create,
-  read,
-  update,
-  destroy,
+    create,
+    read,
+    update,
+    destroy,
 };
+  
