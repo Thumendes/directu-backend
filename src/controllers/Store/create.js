@@ -1,17 +1,16 @@
-const Store = require("../../models/Store")
+const Store = require("../../models/Store");
 
 module.exports = async (req, res) => {
-    const data = req.body
+  const data = req.body;
 
-    try{
-        if(await Store.findOne(data.cnpj)){
-            return res.send("Existing store")
-        }
+  console.log(data);
 
-        const store = await Store.create(data)
-        return res.send(store)
+  try {
+    const store = await Store.create(data);
 
-    }catch (error){
-        return res.send({error, _:"Error creating store"})
-    }
-}
+    console.log(store);
+    return res.json(store);
+  } catch (error) {
+    return res.status(500).send({ error, _: "Error creating store" });
+  }
+};

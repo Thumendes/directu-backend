@@ -1,0 +1,35 @@
+{
+  "client": {
+    "name": "Manuela",
+    "gender": "F",
+    "age": 12,
+    "cpf": "12345678928",
+    "stores": ["5f64a58db8a0e8158091bfe5"],
+    "discounts": ["5f64a6b74561b62e90ddfb7e"]
+  },
+  "discounts": {
+    "name": "ganha20",
+    "value": 20,
+    "storeId": "5f64a58db8a0e8158091bfe5",
+    "storeName": "Bizarro"
+  },
+  "store": {
+    "name": "Bizarro",
+    "cnpj": "12345678928",
+    "imageURL": null,
+    "numClients": 20
+  },
+  "shopkeeper": {
+    "name": "Roseli",
+    "store": "Bizarro",
+    "cpf": "01010101010",
+    "password": "senha",
+    "phone": "(31)79789789",
+    "email": "asjdlak@aksjd.com.br.io"
+  },
+  "form": {
+    "name": "Clientes Interessados",
+    "storeID": 0,
+    "questions": 0
+  }
+}

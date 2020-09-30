@@ -1,4 +1,4 @@
-const { Model, Schema } = require("../database");
+const { model, Schema } = require("../database");
 
 const QuestionSchema = new Schema({
   name: {
@@ -15,4 +15,4 @@ const QuestionSchema = new Schema({
   },
 });
 
-module.exports = new Model("Question", QuestionSchema);
+module.exports = new model("Question", QuestionSchema);

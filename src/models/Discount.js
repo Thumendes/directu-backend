@@ -1,4 +1,4 @@
-const { Model, Schema } = require("../database")
+const { model, Schema } = require("../database")
 
 const DiscountsSchema = new Schema({
     name:{
@@ -19,4 +19,4 @@ const DiscountsSchema = new Schema({
     }
 })
 
-module.exports = new Model("Discounts", DiscountsSchema)
+module.exports = new model("Discounts", DiscountsSchema)

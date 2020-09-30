@@ -1,11 +1,11 @@
-const { Model, Schema } = require("../database");
+const { model, Schema } = require("../database");
 
 const ClientSchema = new Schema({
   name: {
     type: String,
     required: true,
   },
-  gander: {
+  gender: {
     type: String,
     required: true,
   },
@@ -33,4 +33,4 @@ const ClientSchema = new Schema({
   },
 });
 
-module.exports = new Model("Client", ClientSchema);
+module.exports = new model("Client", ClientSchema);
