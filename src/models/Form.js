@@ -1,16 +1,36 @@
-const { model, Schema } = require("../database");
+const {
+  model,
+  Schema
+} = require("../database");
 
 const FormSchema = new Schema({
   name: {
     type: String,
     required: true,
   },
-  storeID: {
+  storeId: {
     type: Schema.Types.ObjectId,
     required: true,
   },
   questions: {
-    type: [Schema.Types.ObjectId],
+    type: [{
+      _id: Schema.Types.ObjectId,
+      __v: Number,
+      name: {
+        type: String,
+        required: true,
+      },
+      options: {
+        type: [{
+          name: {
+            type: String,
+            required: true
+          }
+        }],
+        required: true,
+      },
+      createdAt: Date,
+    }],
     required: true,
   },
   createdAt: {

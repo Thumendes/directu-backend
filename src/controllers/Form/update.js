@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const updatedForm = await Form.findbyIdandUpdate(id, data);
+    const updatedForm = await Form.findByIdAndUpdate({_id: id}, data);
     return res.send(updatedForm);
   } catch (err) {
     return res.send({ err, _: "Error updating form" });

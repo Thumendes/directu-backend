@@ -5,6 +5,6 @@ module.exports = async (req, res) => {
     const shopkeepers = await Shopkeeper.find()
     return res.send(shopkeepers)
   } catch (error) {
-      return res.send({error, _:"Error listing shopkeeper"})
+      return res.send({error, _:"Error listing shopkeepers"})
   }
 };

@@ -5,8 +5,8 @@ module.exports = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const updatedShopkeeper = await Store.findbyIdandUpdate(id, data);
-    return res.send(updatedShopkeeper)
+    const updateShopkeeper = await Shopkeeper.findByIdAndUpdate({_id: id}, data);
+    return res.send(updateShopkeeper)
   } catch (err) {
       return res.send({err, _:"Error updating shopkeeper"})
   }

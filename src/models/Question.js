@@ -6,7 +6,12 @@ const QuestionSchema = new Schema({
     required: true,
   },
   options: {
-    type: [String],
+    type: [{
+      name: {
+        type: String,
+        required: true
+      }
+    }],
     required: true,
   },
   createdAt: {

@@ -6,7 +6,7 @@ const cors = require("cors");
 const routes = require("./routes.js");
 
 const app = express();
-const port = process.env.PORT || 3333;
+const port = 8080;
 
 app.use(cors());
 app.use(morgan("dev"));
