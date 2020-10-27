@@ -14,9 +14,13 @@ const StoreSchema = new Schema({
     default:
       "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80",
   },
+  password: {
+    type: String,
+    required: true,
+  },
   numClients: {
     type: Number,
-    required: true,
+    default: 0,
   },
 });
 

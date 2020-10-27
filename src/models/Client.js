@@ -5,32 +5,24 @@ const ClientSchema = new Schema({
     type: String,
     required: true,
   },
-  gender: {
-    type: String,
-    required: true,
-  },
-  age: {
-    type: Number,
-    required: true,
-  },
   cpf: {
     type: String,
     required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   stores: {
     type: [Schema.Types.ObjectId],
     required: true,
     default: [],
   },
-  discounts: {
+  forms: {
     type: [Schema.Types.ObjectId],
     required: true,
     default: [],

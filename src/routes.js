@@ -1,10 +1,9 @@
 const { Router } = require("express");
 const ClientController = require("./controllers/Client");
 const StoreController = require("./controllers/Store");
-const DiscountController = require("./controllers/Discount");
 const FormController = require("./controllers/Form");
-const Shopkeeper = require("./controllers/Shopkeeper")
-const Auth = require("./controllers/Auth")
+const AnswerController = require("./controllers/Answer");
+const Auth = require("./controllers/Auth");
 
 const routes = Router();
 
@@ -15,17 +14,12 @@ routes.put("/client/:id", ClientController.update);
 routes.delete("/client/:id", ClientController.destroy);
 routes.get("/client/:id", ClientController.unic);
 
-// Rotas para client
+// Rotas para Store
 routes.get("/store", StoreController.read);
+routes.get("/store/:id", StoreController.find);
 routes.post("/store", StoreController.create);
 routes.put("/store/:id", StoreController.update);
 routes.delete("/store/:id", StoreController.destroy);
-
-// Rotas para client
-routes.get("/discount", DiscountController.read);
-routes.post("/discount", DiscountController.create);
-routes.put("/discount/:id", DiscountController.update);
-routes.delete("/discount/:id", DiscountController.destroy);
 
 // Rotas para form
 routes.get("/form", FormController.read);
@@ -34,15 +28,14 @@ routes.put("/form/:id", FormController.update);
 routes.delete("/form/:id", FormController.destroy);
 routes.get("/form/:id", FormController.unic);
 
-// Rotas para shopkeeper
-routes.get("/shopkeeper", Shopkeeper.read);
-routes.post("/shopkeeper", Shopkeeper.create);
-routes.put("/shopkeeper/:id", Shopkeeper.update);
-routes.delete("/shopkeeper/:id", Shopkeeper.destroy);
-
+// Rotas para Answer
+routes.get("/answer", AnswerController.read);
+routes.get("/answer/:id", AnswerController.find);
+routes.post("/answer", AnswerController.create);
+routes.delete("/answer/:id", AnswerController.destroy);
 
 //rota para autenticaçao
-routes.post("/auth", Auth)
-
+routes.post("/authclient", Auth.Client);
+routes.post("/authadmin", Auth.Admin);
 
 module.exports = routes;
