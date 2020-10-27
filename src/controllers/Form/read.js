@@ -1,10 +1,15 @@
 const Form = require("../../models/Form");
 
 module.exports = async (req, res) => {
+  const { storeId } = req.query;
+
   try {
-    const forms = await Form.find()
-    return res.send(forms)
+    if (storeId) {
+      return res.json(await Form.find({ storeId }));
+    }
+    const forms = await Form.find();
+    return res.json(forms);
   } catch (error) {
-      return res.send({error, _:"Error listing forms"})
+    return res.json({ error, _: "Error listing forms" });
   }
 };

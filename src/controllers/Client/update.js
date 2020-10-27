@@ -3,12 +3,11 @@ const Client = require("../../models/Client");
 module.exports = async (req, res) => {
   const data = req.body;
   const { id } = req.params;
-  console.log(data, id)
 
   try {
-    const updatedClient = await Client.findByIdAndUpdate({_id: id}, data);
-    return res.send(updatedClient)
+    const updatedClient = await Client.findByIdAndUpdate({ _id: id }, data);
+    return res.send(updatedClient);
   } catch (err) {
-      return res.send({err, _:"Error updating Client"})
+    return res.send({ err, _: "Error updating Client" });
   }
 };
