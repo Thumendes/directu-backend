@@ -9,10 +9,10 @@ const routes = Router();
 
 // Rotas para client
 routes.get("/client", ClientController.read);
+routes.get("/client/:id", ClientController.unic);
 routes.post("/client", ClientController.create);
 routes.put("/client/:id", ClientController.update);
 routes.delete("/client/:id", ClientController.destroy);
-routes.get("/client/:id", ClientController.unic);
 
 // Rotas para Store
 routes.get("/store", StoreController.read);

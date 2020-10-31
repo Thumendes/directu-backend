@@ -11,6 +11,7 @@ const AnswerSchema = new Schema({
   },
   questions: [
     {
+      name: String,
       value: String,
     },
   ],

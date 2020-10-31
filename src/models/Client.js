@@ -5,6 +5,10 @@ const ClientSchema = new Schema({
     type: String,
     required: true,
   },
+  wallet: {
+    type: Number,
+    default: 0,
+  },
   cpf: {
     type: String,
     required: true,
