@@ -38,4 +38,7 @@ routes.delete("/answer/:id", AnswerController.destroy);
 routes.post("/authclient", Auth.Client);
 routes.post("/authadmin", Auth.Admin);
 
+//rota de cadastro
+routes.post("/auth/signUp", Auth.SignUp)
+
 module.exports = routes;
