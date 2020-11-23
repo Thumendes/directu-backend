@@ -1,13 +1,14 @@
-const main = require('../../services/Email')
+const mail = require("../../services/Email");
+const path = require("path");
 
 module.exports = async (req, res) => {
-    const {to, type} = req.body;
-    console.log(req.body)
-    if (type === 'PRO'){
-        main(to, 'Cadastro Directu', 'Bem Vindo à Directu!!! Entre nesse link para continuar o cadastro da sua conta Pro https://www.google.com')
-        return res.status(200).send('PRO', {to, type})
-    }else {
-        main(to, 'Cadastro Directu', 'Bem Vindo à Directu!!! Entre nesse link para continuar o cadastro da sua conta https://www.google.com')
-        return res.status(200).send( {to, type})
-    }   
-}
+  const { name, email, description } = req.body;
+
+  mail({
+    to: email,
+    subject: "Cadastro Directu",
+    path: path.resolve(__dirname, "..", "..", "template", "signup.html"),
+  });
+
+  return res.status(200).json({ email });
+};

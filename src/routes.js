@@ -39,6 +39,6 @@ routes.post("/authclient", Auth.Client);
 routes.post("/authadmin", Auth.Admin);
 
 //rota de cadastro
-routes.post("/auth/signUp", Auth.SignUp)
+routes.post("/auth/signup", Auth.SignUp);
 
 module.exports = routes;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const development = true;
+const development = false;
 
 mongoose.connect(
   development ? "mongodb://localhost/directu" : process.env.MONGODB_URI,
