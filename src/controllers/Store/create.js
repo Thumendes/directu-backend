@@ -2,6 +2,7 @@ const Store = require("../../models/Store");
 
 module.exports = async (req, res) => {
   const data = req.body;
+  console.log(req.file);
 
   try {
     const stores = await Store.find({ cnpj: data.cnpj });
@@ -10,9 +11,11 @@ module.exports = async (req, res) => {
       return res.json({ error: "Já existe" });
     }
 
-    const store = await Store.create(data);
+    console.log(data);
 
-    return res.json(store);
+    // const store = await Store.create(data);
+
+    return res.json(data);
   } catch (error) {
     console.log(error);
     return res.status(500).send({ error, _: "Error creating store" });

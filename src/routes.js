@@ -4,6 +4,7 @@ const StoreController = require("./controllers/Store");
 const FormController = require("./controllers/Form");
 const AnswerController = require("./controllers/Answer");
 const Auth = require("./controllers/Auth");
+const upload = require("./services/Upload");
 
 const routes = Router();
 
@@ -17,7 +18,7 @@ routes.delete("/client/:id", ClientController.destroy);
 // Rotas para Store
 routes.get("/store", StoreController.read);
 routes.get("/store/:id", StoreController.find);
-routes.post("/store", StoreController.create);
+routes.post("/store", upload.single("image"), StoreController.create);
 routes.put("/store/:id", StoreController.update);
 routes.delete("/store/:id", StoreController.destroy);
 

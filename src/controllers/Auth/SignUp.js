@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   mail({
     to: email,
     subject: "Cadastro Directu",
-    template: "singuppro",
+    template: "signuppro",
   });
 
   return res.status(200).json({ email });

@@ -9,10 +9,33 @@ const StoreSchema = new Schema({
     type: String,
     required: true,
   },
+  cep: {
+    type: String,
+    required: true,
+  },
+  road: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  number: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
   imageURL: {
     type: String,
-    default:
-      "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80",
+    required: true,
   },
   password: {
     type: String,
@@ -21,6 +44,10 @@ const StoreSchema = new Schema({
   numClients: {
     type: Number,
     default: 0,
+  },
+  type: {
+    type: Number,
+    required: true,
   },
 });
 

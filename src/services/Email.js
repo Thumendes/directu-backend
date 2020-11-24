@@ -16,7 +16,7 @@ async function mail({ to, subject, template }) {
     to,
     subject,
     html: fs.readFileSync(
-      path.resolve(__dirname, "..", "..", "template", `${template}.html`),
+      path.resolve(__dirname, "..", "template", `${template}.html`),
       "utf8"
     ),
   });
