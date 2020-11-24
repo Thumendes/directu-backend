@@ -13,6 +13,10 @@ const StoreSchema = new Schema({
     type: String,
     required: true,
   },
+  city: {
+    type: String,
+    required: true,
+  },
   road: {
     type: String,
     required: true,
@@ -47,7 +51,7 @@ const StoreSchema = new Schema({
   },
   type: {
     type: Number,
-    required: true,
+    default: 0,
   },
 });
 
